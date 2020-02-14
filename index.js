@@ -1,3 +1,14 @@
+//App code has to be a pure function
+//state will be undefined for first time usage. 
+//if undefined it should be an empty array.
+//also called as reducer function.
+function todos (state = [], action) {
+    if (action.type === 'ADD_TODO') {
+      return state.concat([action.todo])
+    }
+    return state
+  }
+  
 function createStore () {
     // The store should have four parts
     // 1. The state
