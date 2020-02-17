@@ -91,7 +91,7 @@
             case REMOVE_GOAL :
                 return state.filter((goal) => goal.id !== action.id)
             case RECEIVE_DATA :
-                return action.todos
+                return action.goals
             default :
                 return state
             }
@@ -235,7 +235,7 @@
                     .then(([ todos, goals ]) => {
                     store.dispatch(receiveDataAction(todos, goals))
                 })
-                
+                store.subscribe(() => this.forceUpdate())
             }
 
             render() {
